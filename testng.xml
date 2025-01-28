@@ -1,0 +1,14 @@
+<suite name="Suite">
+    <listeners>
+        <listener class-name="listeners.Listeners"> </listener>
+    </listeners>
+    <test thread-count="5" name="Test">
+        <parameter name="login" value="Admin"/>
+        <parameter name="password" value="admin123"/>
+        <classes>
+            <class name="tests.HomePageTest"> </class>
+        </classes>
+    </test>
+    <!--  Test  -->
+</suite>
+        <!--  Suite  -->
