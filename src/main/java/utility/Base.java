@@ -1,11 +1,12 @@
 package utility;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import jdk.javadoc.doclet.Reporter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -13,7 +14,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class Base {
-    public WebDriver driver;
+    public static WebDriver driver;
     Properties prop;
     String browserName,baseURL;
 
@@ -55,6 +56,18 @@ public class Base {
 
 
         return driver;
+    }
+
+    @BeforeSuite
+    public void setUp() throws IOException {
+        driver = setUpBrowser();
+
+    }
+
+    @AfterSuite
+    public void tearDown(){
+
+        driver.close();
     }
 
 

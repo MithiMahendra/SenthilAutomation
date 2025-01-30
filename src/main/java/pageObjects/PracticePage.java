@@ -20,6 +20,20 @@ public class PracticePage {
     @FindBy(xpath = "(//tr//th)[3]")
     WebElement header3;
 
+    @FindBy(id = "openwindow")
+    WebElement openWindow;
+    @FindBy(xpath = "//*[text()='Welcome to QAClick Academy ']")
+    WebElement welcomeText;
+
+    public WebElement welcomeText(){
+        return welcomeText;
+    }
+
+    public WebElement openWindow(){
+        return openWindow;
+    }
+
+
     public WebElement header1(){
         return header1;
     }
